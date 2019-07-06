@@ -12,6 +12,8 @@ function normalizeHeaderName(headers: any, normalizeHeaderName: string): void {
 
 export function processHeaders(headers: any, data: any): any {
   normalizeHeaderName(headers, 'Content-Type')
+
+  // 如果 data 存在（即非 GET 请求），加上默认请求头
   if (isPlainObject(data)) {
     if (headers && !headers['Content-Type']) {
       headers['Content-Type'] = 'application/json;charset=utf-8'
@@ -21,6 +23,7 @@ export function processHeaders(headers: any, data: any): any {
   return headers
 }
 
+// 处理响应 header，将头部信息转化为对象
 export function parseHeaders(headers: string): any {
   let parsed = Object.create(null)
   if (!headers) return parsed

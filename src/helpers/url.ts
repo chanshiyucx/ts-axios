@@ -11,6 +11,7 @@ function encode(val: string): string {
     .replace(/%5D/gi, ']')
 }
 
+// 处理请求地址，对于 GET 请求进行参数拼接
 export function bulidURL(url: string, params?: any) {
   if (!params) {
     return url

@@ -9,7 +9,7 @@ axios({
   responseType: 'json',
   data: {
     a: 1,
-    b: 2
+    b: 'chanshiyu'
   }
 })
   .then(res => {
